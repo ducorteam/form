@@ -36,3 +36,9 @@ jobs:
       # Step 5: Run tests (optional)
       - name: Run tests
         run: npm test  # Make sure "test" script exists in package.json
+        
+      # Step 6: Publish to npm (requires npm token in secrets)
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
