@@ -1,0 +1,38 @@
+name: Auto Build
+
+# Trigger the workflow on push or pull request events on the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs that will run as part of this workflow
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the latest version of the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Use Node.js version 16 (change as needed)
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the TypeScript project
+      - name: Build the project
+        run: npm run build  # Make sure "build" script exists in package.json
+
+      # Step 5: Run tests (optional)
+      - name: Run tests
+        run: npm test  # Make sure "test" script exists in package.json
