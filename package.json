@@ -1,9 +1,9 @@
 {
   "name": "@ducor/form",
-  "version": "1.0.0",
-  "private": false, 
+  "version": "1.0.2",
+  "private": false,
   "publishConfig": {
-    "access": "public" 
+    "access": "public"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,20 +14,34 @@
   "homepage": "https://opensouce.ducorteam.com",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch",
-    "start": "ts-node src/index.ts"
+    "prepare": "npm run build",
+    "watch": "tsc-watch --onSuccess \"npm run build\"",
+    "release": "npm run build && npm pack && npm publish --access public"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react-form",
+    "react-use-form",
+    "inertia-use-form"
+  ],
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@types/react": "^18.3.11",
     "tsc-watch": "^6.2.0",
     "typescript": "^5.6.3"
   },
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
-  ]
+    "LICENSE",
+     "dist/*"
+  ],
+
+  "dependencies": {
+    "@ducor/http-client": "^0.1.6",
+    "react": "^18.3.1"
+  },
+  "directories": {
+    "lib": "lib"
+  }
 }
