@@ -28,5 +28,4 @@ dist-ssr
 
 *lock.json
 package-lock.json
-dist/*
 *.tgz
