@@ -32,7 +32,6 @@ interface UseFormReturn {
     processing: boolean;
     filedData: FormFiledData;
     setDefaults: (fieldOrFields?: string | FormFiledData, maybeValue?: FormFiledData[keyof FormFiledData]) => void;
-    setErrors: (errors: FormFieldsError) => void;
     setFiledData: (data: FormFiledData) => void;
     reset: (...fields: Array<keyof FormFiledData>) => void;
     errors: FormFieldsError;

@@ -1,6 +1,6 @@
 {
-  "name": "@ducor/form",
-  "version": "1.0.3",
+  "name": "@ducor/helpers",
+  "version": "1.0.5",
   "private": false,
   "type": "commonjs",
   "publishConfig": {
@@ -10,9 +10,9 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ducorteam/form.git"
+    "url": "git+ssh://git@github.com/ducorui/helpers.git"
   },
-  "homepage": "https://opensouce.ducorteam.com",
+  "homepage": "https://opensouce.ducor.net",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
@@ -22,12 +22,16 @@
   "keywords": [
     "react-form",
     "react-use-form",
-    "inertia-use-form"
+    "inertia-use-form",
+    "ducor-helpers",
+    "ducor",
+    "ducor-ui"
   ],
   "license": "MIT",
   "description": "",
   "devDependencies": {
     "@types/react": "^18.3.11",
+    "cross-env": "^7.0.3",
     "tsc-watch": "^6.2.0",
     "typescript": "^5.6.3"
   },
@@ -35,9 +39,8 @@
     "dist",
     "README.md",
     "LICENSE",
-     "dist/*"
+    "dist/*"
   ],
-
   "dependencies": {
     "@ducor/http-client": "^0.1.6",
     "react": "^18.3.1"
