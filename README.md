@@ -1,10 +1,8 @@
-
-useForm 
------------
+# useForm
 
 Since working with forms is so common, Inertia includes a form helper designed to help reduce the amount of boilerplate code needed for handling typical form submissions.
 
-React
+
 ```jsx
     import { useForm } from '@ducor/helpers'
     
@@ -33,7 +31,7 @@ React
 
 To submit the form, you may use the `get`, `post`, `put`, `patch` and `delete` methods.
 
-React
+
 ```jsx
     const { req } = useForm({ ... })
     
@@ -46,7 +44,7 @@ React
 
 The submit methods support all of the typical [visit options](/manual-visits), such as `preserveState`, `preserveScroll`, and event callbacks, which can be helpful for performing tasks on successful form submissions. For example, you might use the `onSuccess` callback to reset inputs to their original state.
 
-React
+
 ```jsx
     const { req, reset } = useForm({ ... })
     
@@ -57,7 +55,7 @@ React
 ```
 If you need to modify the form filedData before it's sent to the server, you can do so via the `transform()` method.
 
-React
+
 ```jsx
     const { transform } = useForm({ ... })
     
@@ -196,4 +194,4 @@ Using Inertia to submit forms works great for the vast majority of situations; h
 
 ## Credits
 
-@ducor/helpers is heavily inspired by the [form handling approach](https://inertiajs.com/forms) from [Inertia.js](https://inertiajs.com/). Ultimately, @ducor/helpers is an effort to provide a standalone `$http`-like service for use outside of specific frameworks.
+@ducor/helpers is heavily inspired by the [form handling approach](https://inertiajs.com/forms) from [Inertia.js](https://inertiajs.com/). Ultimately, @ducor/helpers is an effort to provide a standalone `Form`-like service for use outside of specific frameworks.

@@ -1,6 +1,6 @@
 {
   "name": "@ducor/helpers",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "type": "commonjs",
   "publishConfig": {
@@ -30,10 +30,14 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@types/react": "^18.3.11",
+    "@types/react": "*",
     "cross-env": "^7.0.3",
     "tsc-watch": "^6.2.0",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@ducor/http-client": "*",
+    "react": "*"
   },
   "files": [
     "dist",
@@ -41,10 +45,6 @@
     "LICENSE",
     "dist/*"
   ],
-  "dependencies": {
-    "@ducor/http-client": "^0.1.6",
-    "react": "^18.3.1"
-  },
   "directories": {
     "lib": "lib"
   }
