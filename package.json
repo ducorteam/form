@@ -2,10 +2,11 @@
   "name": "@ducor/form",
   "version": "1.0.3",
   "private": false,
+  "type": "commonjs",
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
+  "main": "lib/index.ts",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
