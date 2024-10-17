@@ -1,5 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
-import feach, { AnyMethod, HttpRequestConfig } from '@ducor/http-client';
+import http from '@ducor/http-client';
+
+export type AnyMethod = (...args: any[]) => any;
 
 type FormDataType = {
     [key: string]: string | number | boolean;
@@ -46,7 +48,7 @@ export const useForm = (initialValues: FormDataType = {}): any => {
     ) => {
         options?.onStart?.(); // Call the onStart hook
         // Call the method dynamically on feach and chain promises
-        return feach[method](url, { data }) // Adjusted for typical feach usage
+        return http[method](url, { data }) // Adjusted for typical feach usage
             .then((response: any) => {
                 options?.onSuccess?.(response); // Call the onSuccess hook
             })
@@ -62,10 +64,10 @@ export const useForm = (initialValues: FormDataType = {}): any => {
     };
 
     // Proxy to intercept and dynamically handle HTTP methods
-    const http = new Proxy<Record<string, AnyMethod>>({}, {
+    const http2 = new Proxy<Record<string, AnyMethod>>({}, {
         get(target, method: string) {
             console.log("___", target, method);
-            if (typeof feach[method] === 'function') {
+            if (typeof http[method] === 'function') {
                 return (url: string, data?: any, options?: OptionsOrConfig) => {
                     return request(method, url, data, options);
                 };
@@ -156,7 +158,7 @@ export const useForm = (initialValues: FormDataType = {}): any => {
                 return newErrors;
             });
         },
-        http,
+        http: http2,
     };
 };
 
